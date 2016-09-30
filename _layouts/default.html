@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>GeorgeCaoJ's Bread</title>
+        <link rel="stylesheet" href="{{site.baseurl}}/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{site.baseurl}}/css/common.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+        <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+        <script src="{{site.baseurl}}/css/bootstrap.min.js"></script>
+        
+    </head>
+   <body>
+       {%include nav.html%}
+    <!-- background photo and title in -->
+    <div class="container-fluid">
+        <div class="row backgroundIMG"></div>
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 textarea">
+                 {{content}}
+            </div>
+            
+        </div>
+    </div>
+    <footer>
+    {% include footer.html %}
+    </footer>
+   </body>
+
+</html>

@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<div class="home">
+    <div class="post_list">
+        {% for post in site.posts %}
+            {% include pagelist.html %}
+
+        {% endfor %}
+    </div>
+</div>
+

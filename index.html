@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<div class="home">
+    <div class="post_list">
+        {% for post in site.posts limit: 5 %}
+            {% include pagelist.html %}
+
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+
+    <h2>all categories<h2>
+	<div class="categories_list">
+
+	{% for category in site.categories %}
+	<div><a href="{{site.baseurl}}/category/{{category | first }}">
+       {{ category | first }}
+       </a>
+	</div>
+	{% endfor %}

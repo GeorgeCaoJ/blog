@@ -1,0 +1,53 @@
+.navbar{
+    margin-bottom: 0px;
+}
+
+.row{
+    background-color: #f5f5f5;
+}
+
+.textarea{
+    background-color: #fff;
+}
+
+.backgroundIMG{
+    background: url("../img/home.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    
+}
+
+/* footer icon and hover */
+.social:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.social {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: o.5s;
+}
+
+#social-wb:hover {
+    color: #e6162d;
+}
+
+#social-tw:hover {
+    color: #4099FF;
+}
+
+#social-em:hover {
+    color: #f39c12;
+}
+
+#social-gh:hover {
+    color: #000000;
+}

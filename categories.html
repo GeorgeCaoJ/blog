@@ -3,8 +3,8 @@ layout: default
 ---
 
 	{% for category in site.categories %}
-	<div><a href="{{site.baseurl}}/category/{{category | first }}">
+	<h3><a href="{{site.baseurl}}/category/{{category | first }}">
        {{ category | first }}
        </a>
-	</div>
+	</h3>
 	{% endfor %}

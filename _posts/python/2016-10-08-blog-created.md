@@ -1,7 +1,7 @@
 ---
 layout: pageshow
 title: 博客初成
-category: breads'talk
+category: bread talk
 description: 博客创建之初该说点啥
 ---
 

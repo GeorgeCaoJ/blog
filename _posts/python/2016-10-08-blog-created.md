@@ -1,12 +1,13 @@
 ---
 layout: pageshow
 title: 博客初成
-category: 面包说
+category: breads'talk
 description: 博客创建之初该说点啥
 ---
 
 ## 自建博客之前
 在CSDN上建了一个博客，分享了初学**python**的一些练手项目:
+
 * beautifulsoup模块对豆瓣TOP250的电影数据进行爬取
 * 对爬取的数据进行可视化分析
 * 分享了一点sublimeText3的配置（主要还是去找人家的分享的教程Ctrl+c+v）

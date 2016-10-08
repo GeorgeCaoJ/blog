@@ -1,5 +1,5 @@
 makrdown: redcarpet
-highlighter: pygments
+highlighter: rouge
 baseurl: "https://georgecaoj.github.io/blog"
 exclude: ['README.md']
 permalink: /:categories/:title

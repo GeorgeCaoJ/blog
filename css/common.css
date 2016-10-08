@@ -59,3 +59,8 @@
 #social-gh:hover {
     color: #000000;
 }
+
+body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6, p {
+    font-family: Georgia, "Times New Roman", "FangSong", "仿宋", STFangSong, "华文仿宋", serif;
+}
+

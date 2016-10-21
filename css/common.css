@@ -20,6 +20,7 @@
 
 body {
   line-height: 1.628571;
+  font-size: 17px;
 }
 
 .backgroundIMG{
@@ -68,11 +69,5 @@ body {
 }
 
 body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6, p {
-<<<<<<< HEAD
     font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
-
-
-=======
-    font-family: Georgia, "Times New Roman", "Microsoft YaHei", "微软雅黑", STXihei, "华文细黑", serif;
->>>>>>> c4bec82c655ad9a5022a5c5541cd6f20ce8c4953
 }

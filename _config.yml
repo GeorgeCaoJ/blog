@@ -1,4 +1,4 @@
-makrdown: redcarpet
+makrdown: redcarpet 
 highlighter: rouge
 baseurl: "https://georgecaoj.github.io/blog"
 exclude: ['README.md']

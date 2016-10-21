@@ -18,6 +18,10 @@
     background-color: #fff;
 }
 
+body {
+  line-height: 1.628571;
+}
+
 .backgroundIMG{
     background: url("../img/home.jpg");
     background-position: top;
@@ -61,6 +65,7 @@
 }
 
 body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6, p {
-    font-family: Georgia, "Times New Roman", "Microsoft YaHei", "微软雅黑", STXihei, "华文细黑", serif;
-}
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
 
+
+}

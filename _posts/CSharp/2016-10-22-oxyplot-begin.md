@@ -1,7 +1,7 @@
 ---
 layout: pageshow
 title: oxyplot的初次使用
-category: C#
+category: CSharp
 description: oxyplot的控件添加方法和基本使用
 ---
 

@@ -82,17 +82,17 @@ description: jekyll博客category（tag）标签页的简化创建
 
 1.在**_layouts**中新建一个**category.html**
 
-```
+```html
 ---
 layout: default
 ---
+\{\%  for post in site.tags[page.tag]  \%\}
+  \{\%    include pageList.html  	\%\}
+\{\%  endfor  \%\}
 
-	{% for post in site.categories[page.category] %}
-		{% include pagelist.html %}				
-    {% endfor %}
 ```
 
-新建一个layout，以后所有的specified_catgegoty.html都引用这个category.html
+(可能是Liquid的原因，若我此处把`\`去了，则会被解释成实际的网页元素，我不希望如此，但是没有找到避免这样的方法，只好暂时这么丑陋)新建一个layout，以后所有的specified_catgegoty.html都引用这个category.html
 
 2.新建一个category文件夹，在文件夹中创建specified_catgegoty.html
 

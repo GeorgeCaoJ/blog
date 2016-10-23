@@ -6,7 +6,8 @@ description: oxyplot的控件添加方法和基本使用
 ---
 
 ## oxyplot简介
-![oxyplot](img/oxyplot.png)
+![oxyplot](../../img/oxyplot.png)
+
 [oxyplot](http://www.oxyplot.org/)是一个跨平台的作图库，其核心库可以移植到多种平台使用，定制化的控件可以在WPF, Windows 8, Windows Phone, Windows Phone Silverlight, Windows Forms, Silverlight, GTK#, Xwt, Xamarin.iOS, Xamarin.Android, Xamarin.Forms and Xamarin.Mac使用。[oxyplot文档](http://docs.oxyplot.org/en/latest/)目前还在建设，在我使用中没有查阅到有帮助的信息，只能从[oxylot的github](https://github.com/oxyplot/oxyplot)上clone，然后学习**Source/Examples**给的实例。
 
 ## oxplot安装和添加控件
@@ -25,6 +26,7 @@ description: oxyplot的控件添加方法和基本使用
 ## winform简单的示例
 
 根据github上的简单示例：
+
 ```csharp
 namespace WindowsFormsDemo
 {
@@ -61,6 +63,7 @@ namespace WindowsFormsDemo
 ## 使用StairStepSeries产生阶梯曲线
 
 在**oxyplot/Source/Examples/ExampleLibrary/Series/StairStepSeriesExamples.cs**中给出了[*StairStepSeries*](https://github.com/oxyplot/oxyplot/blob/develop/Source/Examples/ExampleLibrary/Series/StairStepSeriesExamples.cs)的示例
+
 ```csharp
 // --------------------------------------------------------------------------------------------------------------------
 // <copyright file="StairStepSeriesExamples.cs" company="OxyPlot">

@@ -81,6 +81,7 @@ description: jekyll博客category（tag）标签页的简化创建
 具体方法为：
 
 1.在**_layouts**中新建一个**category.html**
+
 ```
 ---
 layout: default
@@ -90,6 +91,7 @@ layout: default
 		{% include pagelist.html %}				
     {% endfor %}
 ```
+
 新建一个layout，以后所有的specified_catgegoty.html都引用这个category.html
 
 2.新建一个category文件夹，在文件夹中创建specified_catgegoty.html

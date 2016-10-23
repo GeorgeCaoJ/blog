@@ -1,8 +1,8 @@
 ---
 layout: pageshow
 category: jekyll
-title: 手把手jekyll自建博客
-description: 总结一步步使用jekyll搭建个人github主页作为个人博客
+title: jekyll自建博客，简化创建category(tag)页
+description: jekyll博客category（tag）标签页的简化创建
 ---
 
 ## jekyll参考教程
@@ -30,10 +30,12 @@ description: 总结一步步使用jekyll搭建个人github主页作为个人博�
 先整体看一下此博客的jekyll文件系统
 
 ```
-├── allblog.html  //所有文章列表页面
-├── categories.html //文章分类导航页面
+.
+├── allblog.html
+├── categories.html
 ├── category
 │   ├── BreadTalk.html
+│   ├── C#.html
 │   └── jekyll.html
 ├── _config.yml
 ├── css
@@ -43,62 +45,71 @@ description: 总结一步步使用jekyll搭建个人github主页作为个人博�
 │   ├── font-awesome.min.css
 │   ├── jquery-3.1.1.min.js
 │   └── syntax.css
-├── fonts  //图标库
+├── fonts
 │   ├── FontAwesome.otf
 │   ├── fontawesome-webfont.eot
 │   ├── fontawesome-webfont.svg
 │   ├── fontawesome-webfont.ttf
 │   ├── fontawesome-webfont.woff
 │   └── fontawesome-webfont.woff2
-├── img //博客引用的图片
-│   └── home.jpg
+├── img
+│   ├── home.jpg
+│   └── oxyplot.png
 ├── _includes
-│   ├── footer.html  //页面底栏
-│   ├── nav.html     //导航栏
-│   └── pagelist.html  
-├── index.html //主页面
-├── _layouts  //页面布局
-│   ├── category.html  
+│   ├── footer.html
+│   ├── nav.html
+│   └── pagelist.html
+├── index.html
+├── _layouts
+│   ├── category.html
 │   ├── default.html
 │   └── pageshow.html
-├── _posts  //markdwn博客
+├── _posts
 │   ├── BreadTalk
-│   │   └── 2016-10-08-blog-created.md  //jekyll要求博客的命名格式必须是year-month-day-title.md
+│   │   └── 2016-10-08-blog-created.md
+│   ├── C#
+│   │   └── 2016-10-22-oxyplot-begin.md
 │   └── jekyll
 │       └── 2016-10-12-jekyll-tutorial.md
 ├── README.md
-
 ```
 
-#### 新建jekyll配置文件
+## 简化创建标签导航页（category or tag.html)的方法
 
-新建文本文件`_config.yml`,这是jeyll的基本配置文件：
+本来想把创建博客每个步骤慢慢记录下来，但是真正想写下来的时候，发现其实是光以markdown的形式，记录复杂的文件创建和引用是一件复杂的事，因此，[youtube视频教程](https://www.youtube.com/watch?v=ra8r2VymK3c&index=7&list=PLWjCJDeWfDdfVEcLGAfdJn_HXyM4Y7_k-)其实是最好的教程，基本看完就可以动手搭建了。
+而视频教程中提及的标签导航页创建方法对于每个标签，都需要创建一个对应的specified_category.html来显示此标签下的所有文章，方法十分繁琐，但jekyll生成的是静态网页，所以无法动态生成。因为找了很久有没有比较简便的方法，终于在google的帮助下[找到了教程](https://christianspecht.de/2014/10/25/separate-pages-per-tag-category-with-jekyll-without-plugins/)，感谢这为德国大牛的帮助。
+具体方法为：
 
+1.在**_layouts**中新建一个**category.html**
 ```
-makrdown: redcarpet //markdown格式
-highlighter: rouge //代码高亮格式
-baseurl: "https://georgecaoj.github.io/blog" //github个人主页地址
-exclude: ['README.md'] // 将readme.md文件从jekyll文件系统去除
-permalink: /:categories/:title // 采用更友好的网页地址格式： baseurl/categories/ttitle
-```
-
-#### index.html
-
-新建`index.html`，jekyll默认将次文件解释为主页，即baseurl对应的页面，也就是[本博客主页](https://georgecaoj.github.io/blog)，一般主页的主要内容就是显示几篇最近的博客链接和摘要
-
-```html
 ---
 layout: default
 ---
 
-<div class="home">
-    <div class="post_list">
-        {% for post in site.posts limit: 5 %}
-            {% include pagelist.html %}
-        {% endfor %}
-    </div>
-</div>
+	{% for post in site.categories[page.category] %}
+		{% include pagelist.html %}				
+    {% endfor %}
+```
+新建一个layout，以后所有的specified_catgegoty.html都引用这个category.html
+
+2.新建一个category文件夹，在文件夹中创建specified_catgegoty.html
 
 ```
+├── category
+│   ├── BreadTalk.html
+│   ├── C#.html
+│   └── jekyll.html
+```
 
-jekyll采用了`Liquid`模板系统，每个html页面的头必须包含`---`信息，其中的`layout: default`引用了文件夹`_layouts`中的`default.html`模板
+而每个specified_catgegoty.html中，只需要引用**category.html**，如jekyll.html如下：
+
+```
+---
+layout: category
+category: jekyll
+---
+```
+
+每次要使用新的标签时，只需要在category文件夹中，新建对应的specified_catgegoty.html，只需要包含*layout*和*category*信息即可，便可以在写新博客中直接使用对应的category标签。
+
+这种方法依然要为每个标签创建独立的html文件，但是从将重复的代码提出来放进**category.html**来简化每次创建新的标签。

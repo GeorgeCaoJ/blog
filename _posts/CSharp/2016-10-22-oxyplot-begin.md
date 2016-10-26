@@ -69,9 +69,9 @@ namespace WindowsFormsDemo
 
 其中，*FunctionSeries* 根据[oxyplot文档解释](http://docs.oxyplot.org/en/latest/models/series/#tracker)数据点的产生方式应该是通过**String.Format**方式，框架作者将其封装好，直接调用，例如我要用的*StairStepSeries*产生阶梯信号。
 
-## 使用StairStepSeries产生阶梯曲线
+## 使用`StairStepSeries`产生阶梯曲线
 
-在**oxyplot/Source/Examples/ExampleLibrary/Series/StairStepSeriesExamples.cs**中给出了[*StairStepSeries*](https://github.com/oxyplot/oxyplot/blob/develop/Source/Examples/ExampleLibrary/Series/StairStepSeriesExamples.cs)的示例
+在**oxyplot/Source/Examples/ExampleLibrary/Series/StairStepSeriesExamples.cs**中给出了[`tairStepSeries`](https://github.com/oxyplot/oxyplot/blob/develop/Source/Examples/ExampleLibrary/Series/StairStepSeriesExamples.cs)的示例
 
 ```csharp
 // --------------------------------------------------------------------------------------------------------------------
@@ -164,20 +164,26 @@ namespace ExampleLibrary
 }
 ```
 
-重点看到最后*CreateExampleModel*，其中*series*其实为
+重点看到最后`CreateExampleModel`，其中`series`其实为
 
 ```csharp
-var series = new StairStepseries;
+var series = new StairStepseries();
 ```
 
-向*StairStepseries*中添加数据点
+向`StairStepseries`中添加数据点
 
 ```csharp
-series.Points.Add(new DataPoint（x, Math.Sin(x));
+series.Points.Add(new DataPoint(x, Math.Sin(x));
 ```
 
-最后将添加完成的*StairStepseries*曲线，加入*PlotModel*
+最后将添加完成的`StairStepseries`曲线，添加进`PlotModel`
 
 ```csharp
 plotModel.Series.Add(stairStepseries)
 ```
+
+用oxyplot画出的正弦曲线
+![sin]({{site.baseurl}}/img/oxyplot/sin.jpg)
+
+使用oxyplot的`StairStepSeries`得到的采样阶梯曲线
+![stairstep]({{site.baseurl}}/img/oxyplot/stairstep.jpg)

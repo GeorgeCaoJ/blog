@@ -136,6 +136,7 @@ namespace ConsoleApplication1
 ```
 
 创建了5个子线程，同时运行，运行结果是
+
 ![Task.WaitAll]({{site.baseurl}}/img/CSharp/Task.WaitAll.jpg)
 
  **Task.WaitAll**是等待所有的**Task**运行结束，但是会阻塞当前线程，如果是在**WinForm**编程的话，为了防止UI主线程被阻塞，应该创建一个子线程来等待。

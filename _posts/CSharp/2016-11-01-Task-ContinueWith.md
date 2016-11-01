@@ -8,7 +8,7 @@ description: 简单介绍Task类
 
 ## C#多线程编程
 
-在C#的多线程编程中，一般可以使用[Thread Class](https://msdn.microsoft.com/en-us/library/system.threading.thread.aspx)来进行多线程运行，但**从**.net4.0**开始，引进了[Task Class](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.aspx)之后，官方更推荐用**Task**类来异步编程。
+在C#的多线程编程中，一般可以使用[Thread Class](https://msdn.microsoft.com/en-us/library/system.threading.thread.aspx)来进行多线程运行，但从**.net4.0**开始，引进了[Task Class](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.aspx)之后，官方更推荐用**Task**类来异步编程。
 创建一个进程需要一定的开销和时间，特别是多个线程的时候，必须考虑创建和销毁线程需要的系统开销，这时就需要用到[Thread pool](https://msdn.microsoft.com/en-us/library/0ka9477y.aspx)线程池来管理线程，防止频繁的创建和销毁线程。但是，**.net4.0**之后，微软创建了一个优化的**Task**类，它默认会创建线程池来管理task，使用起来更加方便，系统开销更小。可参见[stackoverflow上关于Task和Thread的回答](http://stackoverflow.com/questions/4130194/what-is-the-difference-between-task-and-thread)，因此，学习和使用**Task**是很有必要的。
 
 ## Task使用方式
@@ -24,13 +24,15 @@ Task task = new Task(Action action);
 task.Start();
 ```
 
-当然还有带有返回值[Task<T>](https://msdn.microsoft.com/en-us/library/dd321424.aspx)类，用法差不多。
+当然还有带有返回值[Task](https://msdn.microsoft.com/en-us/library/dd321424.aspx)类，用法差不多。
 至于如何终止**Task**，[codeproject的文章](http://www.codeproject.com/Articles/996857/Asynchronous-programming-and-Threading-in-Csharp-N)中也介绍了，在此不再赘述。
 
 ## Task.ContinueWith()
 
 [Task.ContinueWith](https://msdn.microsoft.com/en-us/library/dd270696.aspx)的定义是
+
 > Creates a continuation that executes asynchronously when the target Task completes.
+
 就是当线程执行完毕之后，再异步运行一段程序。因为，当**Task**在后台运行时，比如进行大量的数据处理，多数情况下我们无法预知线程何时运行结束，除非进行轮询，但显然不是一个高效的方法，微软又提供了适用的方法，
 举个简单控制台例子
 
@@ -134,7 +136,7 @@ namespace ConsoleApplication1
 ```
 
 创建了5个子线程，同时运行，运行结果是
-[Task.WaitAll]({{site.baseurl}}/img/CSharp/Task.WaitAll.jpg)
+![Task.WaitAll]({{site.baseurl}}/img/CSharp/Task.WaitAll.jpg)
 
  **Task.WaitAll**是等待所有的**Task**运行结束，但是会阻塞当前线程，如果是在**WinForm**编程的话，为了防止UI主线程被阻塞，应该创建一个子线程来等待。
 

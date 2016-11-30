@@ -23,15 +23,19 @@ body {
   font-size: 17px;
 }
 
-.backgroundIMG{
-    background: url("../img/home.jpg");
+/*.backgroundIMG{
+     background: url("../img/home.jpg"); 
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     height: 400px;
 
-}
+} */
 
+.img{
+    max-width: 100%;
+    height: auto;
+}
 .hightlight{
     background: #f5f5f5;
 }

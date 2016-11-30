@@ -23,7 +23,7 @@ description: 通过VS官方工具包将开发的程序打包成安装程序的�
 
 ![VSPackage1]({{site.baseurl}}/img/CSharp/VSPackage1.jpg)
 
-2.选择** Windows application**
+2.选择**Windows application**
 
 ![VSPackage2]({{site.baseurl}}/img/CSharp/VSPackage2.jpg)
 

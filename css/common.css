@@ -99,6 +99,6 @@ body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6, p {
     font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
 }
 
-.footer-h3{
-    margin: 0px;
+hr {
+    margin-top: 0px;
 }

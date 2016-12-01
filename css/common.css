@@ -18,6 +18,20 @@
     background-color: #fff;
 }
 
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    margin-bottom: -100px;
+    padding-bottom: 100px;
+}
+
+footer {
+    height: 100px;
+}
+
 body {
   line-height: 1.628571;
   font-size: 17px;

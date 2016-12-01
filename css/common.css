@@ -16,8 +16,7 @@
 }
 
 .col-md-8 {
-    padding-bottom: 100%;
-    margin-bottom: -100%;
+    padding-bottom: 40%;
 }
 
 .textarea{
@@ -43,6 +42,7 @@ body {
 
 footer {
     height: 100px;
+    background-color: #f8f8f8;
 }
 
 

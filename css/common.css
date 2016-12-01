@@ -11,15 +11,37 @@
 }
 
 .row{
+    height: 100%;
+    display: table-row;
     background-color: #f5f5f5;
+}
+
+.row .no-float {
+  display: table-cell;
+  float: none;
 }
 
 .textarea{
     background-color: #fff;
 }
 
-html, body {
+html {
     height: 100%;
+}
+
+body {
+  line-height: 1.628571;
+  font-size: 17px;
+  height: 100%;
+}
+
+.container-fluid {
+    htight: 100%;
+    display: table;
+    width: 100%;
+    margin-top: -50px;
+    padding: 50px 0 0 0;
+    box-sizing: border-box;
 }
 
 .wrapper {
@@ -32,10 +54,7 @@ footer {
     height: 100px;
 }
 
-body {
-  line-height: 1.628571;
-  font-size: 17px;
-}
+
 
 /*.backgroundIMG{
      background: url("../img/home.jpg"); 

@@ -27,15 +27,15 @@ description: Inno Setup程序打包工具
 
 ## 简单的操作方法
 
-1. 进入软件，新建一个**Setup Script**
+1.进入软件，新建一个**Setup Script**
 
 ![Inno 1]({{site.baseurl}}/img/CSharp/Inno1.jpg)
 
-2. 提示操作，将VS生成的Release文件添加进来。先**Browse**主运行程序**.exe**，然后将Release文件中的其他文件通过**Add file**添加。
+2.提示操作，将VS生成的Release文件添加进来。先**Browse**主运行程序**.exe**，然后将Release文件中的其他文件通过**Add file**添加。
 
 ![Inno 2]({{site.baseurl}}/img/CSharp/Inno2.jpg)
 
-3. 根据提示设置安装文件的Icon等信息
+3.根据提示设置安装文件的Icon等信息
 
 ## 应用程序的桌面快捷方式Icon
 

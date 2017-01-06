@@ -11,7 +11,7 @@ description: Inno Setup程序打包工具
 
 > Inno Setup is a free installer for Windows programs. First introduced in 1997, Inno Setup today rivals and even surpasses many commercial installers in feature set and stability.
 
-应用打包工具基本使用于所有window版本的系统。including: **Windows 10, Windows 8.1, Windows 8, Windows Server 2012, Windows 7, Windows Server 2008 R2, Windows Vista, Windows Server 2008, Windows XP, Windows Server 2003, and Windows 2000. (No service packs are required.)**
+应用打包工具基本使用于所有window版本的系统。**including: Windows 10, Windows 8.1, Windows 8, Windows Server 2012, Windows 7, Windows Server 2008 R2, Windows Vista, Windows Server 2008, Windows XP, Windows Server 2003, and Windows 2000. (No service packs are required.)**
 
 ## 差异
 
@@ -31,7 +31,7 @@ description: Inno Setup程序打包工具
 
 ![Inno 1]({{site.baseurl}}/img/CSharp/Inno1.jpg)
 
-2. 按提示操作，将VS生成的Release文件添加进来。先**Browse**主运行程序**.exe**，然后将Release文件中的其他文件通过**Add file**添加。
+2. 提示操作，将VS生成的Release文件添加进来。先**Browse**主运行程序**.exe**，然后将Release文件中的其他文件通过**Add file**添加。
 
 ![Inno 2]({{site.baseurl}}/img/CSharp/Inno2.jpg)
 
@@ -40,8 +40,9 @@ description: Inno Setup程序打包工具
 ## 应用程序的桌面快捷方式Icon
 
 应用程序的桌面快捷方式会继用原输出程序的图标，所以只需要在VS生成之前，将程序的ICON设置为需要的图标。  
-对于**WinForm**的程序，只需要在主窗体的属性中找到**Icon**，然后设置图标即可。  
-对于**WPF**程序，可以在解决方案的**Property->应用程序->图标和清单**中设置即可。
+* 对于**WinForm**的程序，只需要在主窗体的属性中找到**Icon**，然后设置图标即可。  
+
+* 对于**WPF**程序，可以在解决方案的**Property->应用程序->图标和清单**中设置即可。
 
 
 

@@ -210,6 +210,7 @@ pubic void SomeButton_Clicked(object sender, EvnetArgs e)
 	DoOtherThings();
 	textBox1.Text = "Some Text";
 }
+```
 
 这种硬编码的形式，遇到UI的重大变化，必须就将背后事件对应UI的控件名称全部更改才能继续运行。当软件达到一定复杂度，这样做就是灾难性的。  
 
@@ -253,5 +254,5 @@ public string Name{
 
 * 对于小软件来说，开发没有**WinFrom**来的敏捷
 
- 
+
 

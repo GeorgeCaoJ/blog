@@ -2,7 +2,7 @@
 layout: pageshow
 title: Windows下成功部署Django步骤
 category: Django
-description: Windows7下部署Django方案: Apache2.4.23 + mod_wsgi4.4.6 + python 3.4.3
+description: Windows7下部署Django方案Apache2.4.23+mod_wsgi4.4.6+python 3.4.3
 ---
 
 ## 总结在前

@@ -66,7 +66,7 @@ Apache Windows版本需要手动从源码编译，或者使用编译好的[各�
 2. 参照`ReadMe.txt`操作  
 3. 将文件夹`Apache24`移动到C盘根目录  
 4. 环境变量PATH中添加`C:\Apache24\bin`  
-5. 打开Apache配置文件'C:\Apache24\conf\httpd.conf'并添加: ServerName localhost:80(部署方案是在本机运行，如果是生产环境则需要改为特定IP地址)  
+5. 打开Apache配置文件`C:\Apache24\conf\httpd.conf`并添加: ServerName localhost:80(部署方案是在本机运行，如果是生产环境则需要改为特定IP地址)  
 6. 打开命令行，输入`httpd.exe -k install`将apache添加进**Service**  
 7. 可以打开windows的**服务**,找到*Apache24*来打开apache;或者通过apache自带的**ApacheMonitor.exe**来打开，位于`C:\Apache24\bin`  
 
@@ -75,7 +75,8 @@ Apache Windows版本需要手动从源码编译，或者使用编译好的[各�
 下载[mod_wsgi.so](http://grapevine.dyndns-ip.com/download/folder.asp?eid=33&folder=%2Fdownload%2Fapache%2Fmod_wsgi-windows-4%2E4%2E6%2Fmod_wsgi-windows-4%2E4%2E6%2Fapache24-win64-vc10%2Fmodules%2F)并解压  
 1. 将解压得到的`.so`文件改名为`mod_wsgo.so`  
 2.复制文件到apache24目录下的`modules`文件夹内  
-3. `httpd.conf`引入模块 
+3. `httpd.conf`引入模块  
+
 > LoadModule wsgi_module modules/mod_wsig.so
 
 ### 4.在python中安装mod_wsgi包

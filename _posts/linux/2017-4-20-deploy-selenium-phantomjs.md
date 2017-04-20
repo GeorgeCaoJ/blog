@@ -1,13 +1,13 @@
 ---
 layout: pageshow
 category: linux
-title: 部署selenuim_ + phantomjs自动化脚本
+title: 部署selenuim + phantomjs自动化脚本
 description: 将脚本部署到linux服务器涉及的操作和问题
 ---
 
 ## 内容概要
 
-本地系统为*Ubuntu 16.04LTS*, 服务器系统为*Centos x8664*  
+本地系统为*Ubuntu 16.04LTS*, 服务器系统为*Centos x86_64*  
 * ssh登录远程linux系统  
 * 安装依赖（phantomjs)
 * 文件传输（将本地文件传输至服务器）  
@@ -47,13 +47,16 @@ $ cp phantomjs /usr/bin
 
 怎么将本地的脚本传输到linux服务器呢，可以通过**scp**，使用方式和**cp**差不多，都是`scp localfile <user>@<remote_server>:<path/to/save>`，但是这里需要注意的是要带上SSH端口号，否则
 默认会用22端口进行连接，但是服务器各个服务器ssh端口不同，所以需注明具体端口。  
-`$ scp -P <port> muji.py root@<server_ip>:~/Downloads`
+`$ scp -P <port> muji.py root@<server_ip>:~/Downloads`  
 这里我选择将文件拷贝到`~/Dowmloads`文件目录中，端口命令注意为大写P  
 
 ### 运行脚本
 
-准备将脚本运行在`virtualenv`环境中又遇到了问题，在python3.4中创建virtualenv时遇到了类似`Error: Command '['/some/directories/bin/python3.4', '-Im', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1`的错误，google到了[解决方案](https://askubuntu.com/questions/488529/pyvenv-3-4-error-returned-non-zero-exit-status-1)
-```
+准备将脚本运行在`virtualenv`环境中又遇到了问题，在python3.4中创建virtualenv时遇到了类似错误  
+`Error: Command '['/some/directories/bin/python3.4', '-Im', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1`  
+google到了[解决方案](https://askubuntu.com/questions/488529/pyvenv-3-4-error-returned-non-zero-exit-status-1)  
+
+```shell
 pyvenv-3.4 --without-pip myvenv
 source ./myvenv/bin/activate
 wget https://pypi.python.org/packages/source/s/setuptools/setuptools-3.4.4.tar.gz
@@ -67,7 +70,8 @@ cd pip-1.5.6
 python setup.py install
 cd ..
 deactivate
-source ./myvenv/bin/activate```
+source ./myvenv/bin/activate
+```
 
 创建virtualenv时不要包含**pip**包，然后手动从**pypi**上下载。
 

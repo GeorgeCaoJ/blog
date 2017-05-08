@@ -24,7 +24,24 @@ Scoket服务器通过TCP/IP协议，与客户端连接，进行网络通信。�
 
 异步通信参考了[MSDN官方示例](https://msdn.microsoft.com/en-us/library/fx6588te.aspx)。  
 这里踩过了一个坑，值得拿出来说说。  
-关键点在与`ReadCallback(IAsyncResult ar)`中，当远程客户端主动端开连接时，并不会引发`SocketException`，而是会不停出发`ReadCallback`，每次读取到是字节为0，这样就会进入`while(true)`循环，长期占用CPU资源。如果是双核系统，一旦有两个远程客户端意外端开连接，CPU占用会达到100%。
+关键点在与`ReadCallback(IAsyncResult ar)`中，当远程客户端主动端开连接时，并不会引发`SocketException`，而是会不停触发`ReadCallback`，每次读取到是字节为0，这样就会进入`while(true)`循环，长期占用CPU资源。如果是双核系统，一旦有两个远程客户端意外端开连接，CPU占用会达到100%。  
+具体原因在[知乎](https://www.zhihu.com/question/28594409)上得到了解答  
+> 作者：晨随
+链接：https://www.zhihu.com/question/28594409/answer/52763082
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+关于I/O多路复用(又被称为“事件驱动”)，首先要理解的是，操作系统为你提供了一个功能，当你的某个socket可读或者可写的时候，它可以给你一个通知。这样当配合非阻塞的socket使用时，只有当系统通知我哪个描述符可读了，我才去执行read操作，可以保证每次read都能读到有效数据而不做纯返回-1和EAGAIN的无用功。写操作类似。操作系统的这个功能通过select/poll/epoll/kqueue之类的系统调用函数来使用，这些函数都可以同时监视多个描述符的读写就绪状况，这样，多个描述符的I/O操作都能在一个线程内并发交替地顺序完成，这就叫I/O多路复用，这里的“复用”指的是复用同一个线程。
+以select和tcp socket为例，所谓可读事件，具体的说是指以下事件：
+1 socket内核接收缓冲区中的可用字节数大于或等于其低水位SO_RCVLOWAT;
+2 socket通信的对方关闭了连接，这个时候在缓冲区里有个文件结束符EOF，此时读操作将返回0；
+3 监听socket的backlog队列有已经完成三次握手的连接请求，可以调用accept；
+4 socket上有未处理的错误，此时可以用getsockopt来读取和清除该错误。
+所谓可写事件，则是指：
+1 socket的内核发送缓冲区的可用字节数大于或等于其低水位SO_SNDLOWAIT；
+2 socket的写端被关闭，继续写会收到SIGPIPE信号；
+3 非阻塞模式下，connect返回之后，发起连接成功或失败；
+4 socket上有未处理的错误，此时可以用getsockopt来读取和清除该错误。
+
 
 ```csharp
  private void ReadCallback(IAsyncResult ar)

@@ -1,8 +1,8 @@
 ---
 layout: pageshow
-title: STL读后知识点整理
+title: STL源码剖析读后知识点整理
 category: Cpp
-desceiption: 读STL源码剖析的知识点整理
+description: 读STL源码剖析的知识点整理
 ---
 
 ## vector

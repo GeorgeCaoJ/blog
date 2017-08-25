@@ -2,10 +2,9 @@
 layout: pageshow
 title: vector空间配置和栈空间返回引用的困惑和解答
 category: Cpp
-descriptrion: 想明白了STL空间配置器和栈空间的一点迷惑
+description: 想明白了STL空间配置器和栈空间的一点迷惑
 ---
 
-## vector空间配置和栈空间返回引用的困惑和解答
 
 ### STL二级空间配置器
 简单介绍一下C++STL中空间配置器的设计：  

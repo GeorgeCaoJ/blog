@@ -5,7 +5,7 @@ category: linux
 description: 结合APUE查看select源码
 ---
 
-## 源码注释-IO多路复用之select
+
 
 ###  阻塞IO和非阻塞IO
 Linux中IO分为阻塞IO和非阻塞IO  

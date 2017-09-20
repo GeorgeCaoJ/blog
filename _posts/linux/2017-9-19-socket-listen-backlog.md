@@ -1,9 +1,9 @@
-－－－
+---
 layout: pageshow
 title: linux网络编程listen接口中backlog的含义
 category: linux
 description: 翻译自国外博客
-－－－
+---
 
 **本篇博客参考并翻译自[国外博客](http://veithen.github.io/2014/01/01/how-tcp-backlog-works-in-linux.html),仅作学习分享**  
 当应用程序通过`listen`系统调用将socket设置为监听状态时，需要设置其'backlog'的大小，这个值通常描述的是连接队列的大小。但这个队列具体如何工作的呢，需要好好推敲一下。　　

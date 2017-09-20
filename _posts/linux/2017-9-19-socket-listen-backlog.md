@@ -25,4 +25,5 @@ TCP通过三次握手建立连接的过程中，服务器端的状态有**SYN_RC
        2.4.25, this limit was a hard coded value, SOMAXCONN,  with  the  value
        128.
 
-这说明Linux上使用的是第二种方案，SYN_RCVD队列大小通过系统参数设置，ESTABLISHED队列大小通过backlog设置。　　
+这说明Linux上使用的是第二种方案，SYN_RCVD队列大小通过系统参数设置，ESTABLISHED队列大小通过backlog设置。  
+有趣问题是，当ESTABLISHED队列满后，SYN_RCVD队列中某个连接收到ACK想要完成三次握手进入ESTABLISHED队列时，系统内核会怎么处理？通过查看linux内核源码(可见原[博客](http://veithen.github.io/2014/01/01/how-tcp-backlog-works-in-linux.html)),Linux默认情况下是什么都不做，直接忽视ACK数据包，因为服务器端会有重发定时器，当超过一定时间后触发服务器端的重发机制，重新发送SYN/ACK数据包给客户端。

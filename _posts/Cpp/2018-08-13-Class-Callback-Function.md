@@ -2,7 +2,7 @@
 layout: pageshow
 title: 类成员函数用作回调函数的方式
 category: Cpp
-description: 一般情况下，堆排序性能比快排要低
+description: 类内函数在使用回调时的注意点
 ---
 
 ## 类成员函数的this指针

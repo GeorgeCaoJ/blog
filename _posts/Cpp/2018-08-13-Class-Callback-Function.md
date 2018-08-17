@@ -1,6 +1,6 @@
 ---
 layout: pageshow
-title: 算法实践-堆排序
+title: 类成员函数用作回调函数的方式
 category: Cpp
 description: 一般情况下，堆排序性能比快排要低
 ---

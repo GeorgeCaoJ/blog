@@ -24,53 +24,53 @@ windows下CapsLock按键的使用率很低，与vi/vim编程时常用的<esc>按
 > 
 > 00, 00, 00, 00
 > 
-> 前两行和最后一行，都是固定的，全部为0。第三行，表示你修改了几个键，其实我们只是改了两个键，不过最后那一行也要算进去，所以是3。
+ 前两行和最后一行，都是固定的，全部为0。第三行，表示你修改了几个键，其实我们只是改了两个键，不过最后那一行也要算进去，所以是3。
 
 4. 重启电脑生效
 
 下面附上各个键位值的参考：
 
-Escape 01 00
-
-Tab 0F 00
-
-Caps Lock 3A 00
-
-Left Alt 38 00
-
-Left Ctrl 1D 00
-
-Left Shift 2A 00
-
-Left Windows 5B E0
-
-Right Alt 38 E0
-
-Right Ctr l1D E0
-
-Right Shift 36 00
-
-Right Windows 5C E0
-
-Backspace 0E 00
-
-Delete 53 E0
-
-Enter 1C 00
-
-Space 39 00
-
-Insert 52 E0
-
-HOME 47 E0
-
-End 4F E0
-
-Num Lock 45 00
-
-Page Down 51 E0
-
-Page Up 49 E0
-
-Scroll Lock 46 00
+> Escape 01 00
+>
+> Tab 0F 00
+>
+>Caps Lock 3A 00
+>
+>Left Alt 38 00
+>
+>Left Ctrl 1D 00
+>
+>Left Shift 2A 00
+>
+>Left Windows 5B E0
+>
+>Right Alt 38 E0
+>
+>Right Ctr l1D E0
+>
+>Right Shift 36 00
+>
+>Right Windows 5C E0
+>
+>Backspace 0E 00
+>
+>Delete 53 E0
+>
+>Enter 1C 00
+>
+>Space 39 00
+>
+>Insert 52 E0
+>
+>HOME 47 E0
+>
+>End 4F E0
+>
+>Num Lock 45 00
+>
+>Page Down 51 E0
+>
+>Page Up 49 E0
+>
+>Scroll Lock 46 00
 

@@ -115,7 +115,9 @@ void main(){
 	getchar();
 }
 ```
-2. 使用静态成员,访问类私有成员
+
+2. 使用静态成员,访问类私有成员  
+   
 ```c++
 #include <iostream>
 #include <string>

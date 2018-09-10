@@ -122,7 +122,6 @@ void main(){
 #include <iostream>
 #include <string>
 class Student{
-friend void Call(Student* pStudent);
 public:
 	Student(const char* pszName){
 		m_strName = pszName;

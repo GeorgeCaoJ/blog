@@ -8,8 +8,8 @@ description: VIM输入模式下，ESC键位太远，通过键位互换解决
 
 >方法参考于[博客](https://www.cnblogs.com/zhahw/p/5344290.html)  
 
-windows下CapsLock按键的使用率很低，与vi/vim编程时常用的<esc>按键互换可以很方便了vim党，具体互换方法为修改注册表信息：  
-1. 找到注册表位置[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
+**windows7**下CapsLock按键的使用率很低，与vi/vim编程时常用的<esc>按键互换可以很方便了vim党，具体互换方法为修改注册表信息：  
+1. 找到注册表位置[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout],Win10下在HKEY_CURRENT_USER目录中
 2. 新建一个二进制值的key，名为**Scancode Map**
 3. 输以下值  
 > 00, 00, 00, 00

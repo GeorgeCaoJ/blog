@@ -3,7 +3,7 @@ layout: pageshow
 title: ss-libev+obfs插件部署安装流程
 category: linux
 description: 记录ss+obfs插件部署流程及守护进程监控服务
---
+---
 
 ## 开始前
 [shadowsocks-libev](https://github.com/shadowsocks/shadowsocks-libev)是现在依然维护更新的ss项目，用于科学上网，但是在某些场景如学校、公司，对网络严格控制的情况下，直接ss无法进行访问，需要加上obfs的插件来伪装，具体策略后面有时间深入研究下，此处针对安装流程进行记录。

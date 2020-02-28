@@ -1,13 +1,10 @@
 ---
 layout: pageshow
 category: tools
-title: windows bat脚本判断当前操作系统的方法
-description: windows bat 当前操作系统
+title: VSCode如何配置SOCKS5代理
+description: VSCode在工作网络中无法实现插件更新和下载，所以需要配置代理的情况
 tag: VSCode | socks5
 ---
-
-# VSCode如何配置SOCKS5代理
-VSCode在工作网络中无法实现插件更新和下载，所以需要配置代理的情况
 
 ## 编辑器页面无法配置
 第一个直接的方法是直接通过VSCode的设置进行配置，但是页面提示需要满足http开头的正则才能正确配置上，这样的方式无法配置成功

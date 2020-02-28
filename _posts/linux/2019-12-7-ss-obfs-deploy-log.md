@@ -25,7 +25,12 @@ description: 记录ss+obfs插件部署流程及守护进程监控服务
         "no_delay": true,
 }
 ```
-
+注意点：服务器防火墙设置需要把ss端口开放出来：
+```shell
+$firewall-cmd --add-port=5060/tcp  --permanent
+$firewall-cmd --add-port=5060/udp  --permanent
+$firewall-cmd --reload
+```
 ### simple-obfs服务端编译
 按照[simple-obfs](https://github.com/shadowsocks/simple-obfs)教程clone源码进行编译，install后得到obfs-server,以插件形式启动ss,并在后台运行
 ```shell
